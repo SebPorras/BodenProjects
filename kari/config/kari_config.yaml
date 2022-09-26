@@ -1,0 +1,15 @@
+#Main working directory
+workdir: "../kari"
+
+# Store all FASTA files here
+fastadir: "../kari/fasta"
+
+# Each FASTA file needs an according .subset file in this folder (test1.fasta -> test1.subset)
+subdir: "../kari/subset_rules"
+
+# Which columns should we plot in the summary documents?
+annotation_cols: ['Cross_reference_SUPFAM', 'Cross_reference_PANTHER', 'Loop_Length', 'KARI_Class', 'EC_number', 'Metal_Binding']
+
+# Block a data set from being run (you can still keep the FASTA and .subset file in the fastadir and subdir)
+blocked_datasets : []
+
