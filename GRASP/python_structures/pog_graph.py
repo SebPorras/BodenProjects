@@ -197,23 +197,22 @@ class POGraph(object):
         for i in range(len(indices)):
             
             node = SymNode(name=indices[i], value=node_vals[i]["Value"])
-                    
-            edge = Edge(start=indices[i])
             
-            #set [] to * to signify end of seq 
-            try: 
-                edge.setEnd(adj[i][0]) 
-            except IndexError: 
-                edge.setEnd("*") 
+            for j in range(len(adj[i])):
+                
+                edge = Edge(start=indices[i])
+                
+                #set [] to * to signify end of seq 
+                try: 
+                    edge.setEnd(adj[i][j]) 
+                except IndexError: 
+                    edge.setEnd("*") 
+                
+                node.addEdge(edge)
             
-            node.addEdge(edge)
             nodes.append(node)
      
-        
-        #print(len(nodes[10]._edges))
-        #print(nodes)
         self._nodes = np.array(nodes)
-        print(len(self._nodes))
         
         if isAncestor:
         
@@ -223,10 +222,11 @@ class POGraph(object):
             for i in range(len(jpog["Edgeindices"])):
                 
                 edge_info = edges[i]
-
+                
                 # Current implementation for virtual start node, add it as an edge 
                 # to the real start node (i.e index 0). This is based on assumption 
                 # that start node is always indexed first based on indices array 
+
                 if edgeInd[i][0] == -1:
                     
                     cor_node = self._nodes[0]
@@ -248,22 +248,28 @@ class POGraph(object):
                     node_loc = np.where(self._indices == edgeInd[i][0])[0][0]
                     
                     cor_node = self._nodes[node_loc]
+                
+                    #check if there is a duplicate edge between adjacent residues 
+                    #if yes, replace with more informative bidirectional edge 
                     
+                    for j in range(len(cor_node.getEdges())):
+                        
+                        try: 
+                            adjacent_edge = cor_node.getEdges()[j]    
+                                
+                            if edgeInd[i][0] == adjacent_edge.getStart() and\
+                            edgeInd[i][1] == adjacent_edge.getEnd():
+                                
+                                cor_node._edges.pop(j)
+                                                
+                        except IndexError:
+                            continue 
+
                     edge = Edge(start=edgeInd[i][0], end=edgeInd[i][1],
                     edgeType=jpog["Edgetype"], recip=edge_info["Recip"],
                     backward=edge_info["Backward"], forward=edge_info["Forward"],
                     weight=edge_info["Weight"])
 
-                    #check if there is a duplicate edge between adjacent residues 
-                    #if yes, replace with more informative bidirectional edge 
-                    adjacent_edge = cor_node.getEdges()[0]             
+                    cor_node.addEdge(edge)
 
-                    if edgeInd[i][0] == adjacent_edge.getStart() and \
-                    edgeInd[i][1] == adjacent_edge.getEnd():
-                        
-                        cor_node._edges[0] = edge
-                        
-                    else:
-                        cor_node.addEdge(edge)
-                      
-                
+              

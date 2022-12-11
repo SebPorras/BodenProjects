@@ -121,12 +121,9 @@ class POGTree(object):
             
             g.POGraphFromJSON(e, isAncestor=False)
           
-            print(g)
-
             idx = self._idxTree.getIndex(g._name)
 
             self._POGraphs[idx] = g
-            
         
         for a in ancestors:
             
@@ -141,17 +138,24 @@ class POGTree(object):
 if __name__ == "__main__":
         
     poggers = POGTree()
-    poggers.IdxTreeFromJSON("./python_structures/ASR.json")
-    poggers.POGraphFromJSON("./python_structures/ASR.json")
+    poggers.IdxTreeFromJSON("./python_structures/ASR_big.json")
+    poggers.POGraphFromJSON("./python_structures/ASR_big.json")
 
     
-    print(poggers.getIdxTree())
-    print(poggers.getPOGraphs())
+    # print(poggers.getIdxTree())
+    # print(poggers.getPOGraphs())
 
     #Example 1: Retrieve POG graph for ancestor zero 
-    print(poggers.getIdxTree().getIndices())
+    # print(poggers.getIdxTree().getIndices())
 
-    N0_pog = poggers.getPOGraphs()[7]
+    N0_pog = poggers.getPOGraphs()[0]
     
-    # for n in N0_pog.getNodes():
-    #     print(len(n._edges))
+    for n in N0_pog.getNodes():
+
+        if len(n._edges) > 1:
+            print(f"Name: {n._name}")
+            print(len(n._edges))
+            for e in n._edges:
+                print(e._start, e._end)
+
+  
