@@ -102,8 +102,10 @@ class POGTree(object):
         
         self._idxTree = tree
 
-    def POGraphFromJSON(self, JSON):
-        """Instantiates a POGraph object from a Json file
+    def POGraphFromJSON(self, JSON: json):
+        """Instantiates a POGraph object from a Json file. Requires an 
+        instance of an IdxTree so that graphs can be assigned to the correct 
+        index
         
         Parameters:
             json_file (json): JSON file object 
@@ -136,26 +138,45 @@ class POGTree(object):
 
 
 if __name__ == "__main__":
-        
+    
+
     poggers = POGTree()
+
+    #First create the tree topology 
     poggers.IdxTreeFromJSON("./python_structures/ASR_big.json")
+
+    #once the tree is created, you can assign POGs to branchpoints 
     poggers.POGraphFromJSON("./python_structures/ASR_big.json")
 
-    
-    # print(poggers.getIdxTree())
-    # print(poggers.getPOGraphs())
+    print("IdxTree")
+    print()
+    print(poggers.getIdxTree())
+
+
+    print()
+    print("Graphs")
+    print()
+    print(poggers.getPOGraphs())
 
     #Example 1: Retrieve POG graph for ancestor zero 
-    # print(poggers.getIdxTree().getIndices())
+    print()
+    print("Tree indices")
+    print(poggers.getIdxTree().getIndices())
 
-    N0_pog = poggers.getPOGraphs()[0]
+    #Lets look at ancestor '6' -> can see its index is 9
+    N6_pog = poggers.getPOGraphs()[9]
+    print()
+    print("POG summary info")
+    print(N6_pog)
+    print()
+    #We can look for nodes that have multiple edges
+    for n in N6_pog.getNodes():
+     
+        if len(n.getEdges()) >= 2:
+            print()
+            print(f"Sequence index: {n.getName()}")
+            print(f"Number of edges: {len(n._edges)}")
+            for e in n.getEdges():
+                print(f"Start: {e.getStart()}, End: {e.getEnd()}")
+
     
-    for n in N0_pog.getNodes():
-
-        if len(n._edges) > 1:
-            print(f"Name: {n._name}")
-            print(len(n._edges))
-            for e in n._edges:
-                print(e._start, e._end)
-
-  

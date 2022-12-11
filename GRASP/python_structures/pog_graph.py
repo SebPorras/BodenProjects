@@ -8,6 +8,7 @@
 ###############################################################################
 
 import numpy as np
+import numpy.typing as npt
 
 class Edge(object):
     """Creates instance of an edge between two positions in a sequence. 
@@ -39,10 +40,7 @@ class Edge(object):
 
     def __str__(self) -> str:
         
-        return(f"Start: {self._start}\nEnd: {self._end}\nType: \
-        {self._edgeType}\nWeight: {self._weight}\nBackward: \
-        {self._backward}\n Forward: {self._forward}\nRecip: \
-        {self._recip}")
+        return(f"Start: {self._start}\nEnd: {self._end}\nType: {self._edgeType}\nWeight: {self._weight}\nBackward: {self._backward}\n Forward: {self._forward}\nRecip: {self._recip}")
 
     def setStart(self, start: int): self._start = start 
 
@@ -107,7 +105,7 @@ class POGraph(object):
     Each position is assigned a SymNode which contain Edges. 
     """
 
-    def __init__(self, version:str=None,indices:np.array=None, nodes:np.array=None,
+    def __init__(self, version:str=None,indices:np.array=None, nodes:npt.ArrayLike=None,
     start:int=None, end:int=None, size:int=None, terminated:bool=None,
     directed:bool=None, name:str=None, isAncestor:bool=None):
         """Constructs instance of POGraph. 
@@ -156,6 +154,8 @@ class POGraph(object):
     def setStart(self, start:int): self._start = start
 
     def getNodes(self): return self._nodes
+    
+    def getIndices(self): return self._indices
 
     def POGraphFromJSON(self, jpog: dict, isAncestor: bool):
         """Takes JSON format of a POG and transcribes this information 
@@ -198,17 +198,16 @@ class POGraph(object):
             
             node = SymNode(name=indices[i], value=node_vals[i]["Value"])
             
-            for j in range(len(adj[i])):
-                
+            # set [] to * to signify end of seq 
+            if len(adj[i]) == 0:
                 edge = Edge(start=indices[i])
-                
-                #set [] to * to signify end of seq 
-                try: 
-                    edge.setEnd(adj[i][j]) 
-                except IndexError: 
-                    edge.setEnd("*") 
-                
+                edge.setEnd("*") 
                 node.addEdge(edge)
+            else: 
+                for j in range(len(adj[i])):
+                    
+                    edge = Edge(start=indices[i], end=adj[i][j])
+                    node.addEdge(edge)
             
             nodes.append(node)
      

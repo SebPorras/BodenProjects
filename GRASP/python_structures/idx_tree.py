@@ -14,6 +14,7 @@
 import json
 import numpy as np
 import os
+import numpy.typing as npt
 
 #print(os.getcwd())
 
@@ -22,10 +23,12 @@ class BranchPoint(object):
     """Represents a branchpoint on a phylogenetic tree. Can contain
     information about the parents or children of that point and how 
     long that branch point is. 
+
+    Future use -> can associate annotations with this branch point 
     """
 
     def __init__(self, id: str, parent: int, dist: float,
-    children: np.array, isleaf: bool) -> None:
+    children: npt.ArrayLike, isleaf: bool) -> None:
         """ Constructs instance of a branchpoint.
 
         Parameters: 
@@ -44,11 +47,15 @@ class BranchPoint(object):
 
     def __str__(self) -> str:
      
-        return f"Name: {self._id} \nParent Index: {self._parent}\nDistance To Parent {self._dist}\nChildren IDs: {self._children}\nLeaf: {self._isLeaf}"
+        return (f"Name: {self._id}\n\
+        Parent Index: {self._parent}\n\
+        Distance To Parent {self._dist}\n\
+        Children IDs: {self._children}\n\
+        Leaf: {self._isLeaf}")
 
     def getId(self) -> str: return self._id
 
-    def getParent(self) -> str: return self._parent
+    def getParent(self) -> int: return self._parent
 
     def getDist(self) -> float: return self._dist 
 
@@ -77,9 +84,7 @@ class IdxTree(object):
             self._distances = None
 
     def __str__(self) -> str:
-        return f"Number of branchpoints: {self.getNBranches()}\nParents: \
-        {self.getParents()}\nChildren: {self.getChildren()}\nIndices: \
-        {self.getIndices()}\nDistances: {self.getDistances()}"
+        return f"Number of branchpoints: {self.getNBranches()}\nParents: {self.getParents()}\nChildren: {self.getChildren()}\nIndices: {self.getIndices()}\nDistances: {self.getDistances()}"
 
     def getNBranches(self) -> int: return self._nBranches
 
@@ -156,7 +161,7 @@ class IdxTree(object):
         
         self._indices[Pname] = BIdx
 
-    def setChildren(self, PIdx: int, Children: np.array):
+    def setChildren(self, PIdx: int, Children: npt.ArrayLike):
         """
         Parameters: 
             PIdx (int): Parent index
