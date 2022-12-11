@@ -18,9 +18,23 @@ import os
 #print(os.getcwd())
 
 
-class BranchPoint:
+class BranchPoint(object):
+    """Represents a branchpoint on a phylogenetic tree. Can contain
+    information about the parents or children of that point and how 
+    long that branch point is. 
+    """
 
-    def __init__(self, id, parent, dist, children, isleaf) -> None:
+    def __init__(self, id: str, parent: int, dist: float,
+    children: np.array, isleaf: bool) -> None:
+        """ Constructs instance of a branchpoint.
+
+        Parameters: 
+            id(str): Sequence ID 
+            parent(int): Index of parent branchpoint
+            dist(float): Distance to parent
+            children(np.array): all children of branchpoint 
+            isLeaf(bool): Marker for extant sequence             
+        """
         
         self._id = id 
         self._parent = parent
@@ -32,12 +46,23 @@ class BranchPoint:
      
         return f"Name: {self._id} \nParent Index: {self._parent}\nDistance To Parent {self._dist}\nChildren IDs: {self._children}\nLeaf: {self._isLeaf}"
 
-class IdxTree:
+    def getId(self) -> str: return self._id
+
+    def getParent(self) -> str: return self._parent
+
+    def getDist(self) -> float: return self._dist 
+
+    def getChildren(self): return self._children
+
+    def isLeaf(self) -> bool: return self._isLeaf 
+
+class IdxTree(object):
 
     def __init__(self, n=0, useddistances=False):
         """
-        n (int): number of branch points 
-        useddistances (bool): True if distances have been used?
+        Parameters: 
+            n (int): number of branch points 
+            useddistances (bool): True if distances have been used?
         """
         
         self._nBranches = n 
@@ -51,9 +76,10 @@ class IdxTree:
         else:
             self._distances = None
 
-
     def __str__(self) -> str:
-        return f"Number of branchpoints: {self.getNBranches()}\nParents: {self.getParents()}\nChildren: {self.getChildren()}\nIndices: {self.getIndexes()}\nDistances: {self.getDistances()}"
+        return f"Number of branchpoints: {self.getNBranches()}\nParents: \
+        {self.getParents()}\nChildren: {self.getChildren()}\nIndices: \
+        {self.getIndices()}\nDistances: {self.getDistances()}"
 
     def getNBranches(self) -> int: return self._nBranches
 
@@ -63,10 +89,9 @@ class IdxTree:
 
     def getChildren(self) -> dict: return self._children
 
-    def getIndexes(self) -> dict: return self._indices
+    def getIndices(self) -> dict: return self._indices
 
     def getDistances(self) -> np.array: return self._distances
-
 
     def getParent(self, CIdx: int) -> int:
         """
@@ -79,10 +104,17 @@ class IdxTree:
 
         return self._parents[CIdx]
 
-    def getIndex(self, name: str):
+    def getIndex(self, name: str) -> int:
+        """
+        Parameters:
+            name (str): sequence name 
+
+        Returns:
+            int: index of branchpoint for that sequence
+        
+        """
 
         return self._indices[name]
-
 
     def setParent(self, BIdx: int, PIdx: int):
         """
@@ -134,7 +166,6 @@ class IdxTree:
 
         self._children[PIdx] = Children
 
-
     def distToParent(self, CIdx: int) -> float:
         """
         Parameters:
@@ -169,79 +200,3 @@ class IdxTree:
             i += 1
             self.constructNwk()
         """
-
-
-
-# def IdxTreeFromJSON(json_file: json) -> IdxTree:
-#     """
-#     Instantiates a Idx Tree object from a Json file
-    
-#     Parameters:
-#         json_file (json): JSON file object 
-    
-#     Returns:
-#         IdxTree: 
-#     """
-#     with open(json_file, "r") as file:
-#         json_file = json.load(file)
-
-#     try: 
-#         jdists = json_file["Input"]["Tree"]["Distances"]
-#     except KeyError:
-#         jdists = None
-
-#     branch_num = json_file["Input"]["Tree"]["Branchpoints"]
-
-#     tree = IdxTree(branch_num, jdists != None)
-
-#     jlabels = json_file["Input"]["Tree"]["Labels"]
-#     jparents = json_file["Input"]["Tree"]["Parents"]
-    
-#     #iterate at each branch point 
-#     for i in range(branch_num):
-        
-#         try:
-
-#             #index by parent name and assign what their parent branch point index is 
-#             tree.setParent(i, jparents[i]) #tree._parents[i] = jparents[i]
-            
-#             if jdists is not None:
-
-#                 #using same index as parent, order distances 
-#                 tree.setDistance(i, jdists[i]) #tree._distances[i] = jdists[i] 
-            
-#             #index by parent name and assign branch point
-#             tree.setIndex(i, jlabels[i]) #tree._index[jlabels[i]] = i
-        
-#         except RuntimeError:
-#             print("Invalid JSON format")
-    
-#     #Next step is to record children of each parent
-#     for PIdx in range(branch_num):
-        
-#         curr_children = []
-    
-#         for CIdx in range(branch_num):
-            
-#             if (tree.getParent(CIdx) == PIdx):
-#                 curr_children.append(CIdx)
-        
-#         if len(curr_children) == 0:
-#             ch_array = None
-#         else:
-#             ch_array = np.array(curr_children)
-       
-#         tree.setChildren(PIdx, ch_array)
-
-#     for BIdx in range(branch_num):
-
-#         bp = BranchPoint(jlabels[BIdx], tree.getParent(BIdx), jdists[BIdx],
-#         tree.getChildren()[BIdx], tree.isLeaf(BIdx))
-#         tree.setBranchPoint(BIdx, bp) 
-    
-#     return tree 
-
-# test_tree = IdxTreeFromJSON("./python_structures/ASR.json")
-
-# print(test_tree)
-

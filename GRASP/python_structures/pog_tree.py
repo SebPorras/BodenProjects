@@ -12,23 +12,33 @@ import numpy as np
 from pog_graph import *
 from idx_tree import * 
 
-class POGTree():
+class POGTree(object):
+    """Contains an IdxTree and a POGraph for each branch point.
+    All graphs and branchpoints are assigned the same index for 
+    continuity
+    """
 
-    def __init__(self, idxTree=None, POGraphs=dict()) -> None:
+    def __init__(self, idxTree:IdxTree=None, POGraphs=None) -> None:
+        """Constructs instance of POGTree
+
+        Parameters:
+            idxTree(IdxTree)
+            POGraph(POGraph)
+        """
         
         self._idxTree = idxTree
-        self._POGraphs = POGraphs
+        if POGraphs is None:
+            self._POGraphs = dict()
 
-        
-    def IdxTreeFromJSON(self, json_file: json) -> IdxTree:
-        """
-        Instantiates a Idx Tree object from a Json file
+    def getIdxTree(self) -> IdxTree: return self._idxTree
+
+    def getPOGraphs(self) -> dict: return self._POGraphs
+
+    def IdxTreeFromJSON(self, json_file: json):
+        """Instantiates a IdxTree object from a Json file
         
         Parameters:
             json_file (json): JSON file object 
-        
-        Returns:
-            IdxTree: 
         """
         with open(json_file, "r") as file:
             json_file = json.load(file)
@@ -50,16 +60,17 @@ class POGTree():
             
             try:
 
-                #index by parent name and assign what their parent branch point index is 
-                tree.setParent(i, jparents[i]) #tree._parents[i] = jparents[i]
+                #index by parent name and assign what their parent 
+                # branch point index is 
+                tree.setParent(i, jparents[i]) 
                 
                 if jdists is not None:
 
                     #using same index as parent, order distances 
-                    tree.setDistance(i, jdists[i]) #tree._distances[i] = jdists[i] 
+                    tree.setDistance(i, jdists[i])
                 
                 #index by parent name and assign branch point
-                tree.setIndex(i, jlabels[i]) #tree._index[jlabels[i]] = i
+                tree.setIndex(i, jlabels[i]) 
             
             except RuntimeError:
                 print("Invalid JSON format")
@@ -83,16 +94,21 @@ class POGTree():
 
         for BIdx in range(branch_num):
 
-            bp = BranchPoint(jlabels[BIdx], tree.getParent(BIdx), jdists[BIdx],
-            tree.getChildren()[BIdx], tree.isLeaf(BIdx))
+            bp = BranchPoint(id=jlabels[BIdx], parent=tree.getParent(BIdx), 
+            dist=jdists[BIdx],children=tree.getChildren()[BIdx],
+            isleaf=tree.isLeaf(BIdx))
+            
             tree.setBranchPoint(BIdx, bp) 
-        
         
         self._idxTree = tree
 
-
-    def POGsFromJSON(self, JSON):
+    def POGraphFromJSON(self, JSON):
+        """Instantiates a POGraph object from a Json file
         
+        Parameters:
+            json_file (json): JSON file object 
+        """
+            
         with open(JSON, "r") as file:
             data = json.load(file)
 
@@ -102,11 +118,15 @@ class POGTree():
         for e in extants:
 
             g = POGraph()
+            
             g.POGraphFromJSON(e, isAncestor=False)
+          
+            print(g)
 
             idx = self._idxTree.getIndex(g._name)
 
             self._POGraphs[idx] = g
+            
         
         for a in ancestors:
             
@@ -118,9 +138,20 @@ class POGTree():
             self._POGraphs[idx] = g
 
 
-poggers = POGTree()
-poggers.IdxTreeFromJSON("./python_structures/ASR.json")
-poggers.POGsFromJSON("./python_structures/ASR.json")
+if __name__ == "__main__":
+        
+    poggers = POGTree()
+    poggers.IdxTreeFromJSON("./python_structures/ASR.json")
+    poggers.POGraphFromJSON("./python_structures/ASR.json")
 
-print(poggers._idxTree)
-print(poggers._POGraphs)
+    
+    print(poggers.getIdxTree())
+    print(poggers.getPOGraphs())
+
+    #Example 1: Retrieve POG graph for ancestor zero 
+    print(poggers.getIdxTree().getIndices())
+
+    N0_pog = poggers.getPOGraphs()[7]
+    
+    # for n in N0_pog.getNodes():
+    #     print(len(n._edges))
