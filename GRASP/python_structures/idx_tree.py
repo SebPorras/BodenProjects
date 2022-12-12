@@ -1,207 +1,185 @@
 ###############################################################################
 # Date: 7/12
-# Author: Sebastian Porras   
-# Aims: This is an implementation of the IDx tree. Can be initialised from a 
-# JSON object and created.Currently based on output from a joint reconstruction 
+# Author: Sebastian Porras
+# Aims: This is an implementation of the IDx tree. Can be initialised from a
+# JSON object and created.Currently based on output from a joint reconstruction
 # Has very basic structures that allow most variables to be accessed or set.
-# To do: 
-# 1) Make a method that can parse this information into a nwk file so that 
-# it could be read by other tree viewers.  
-# 2) Investigate about adding in Branchpoint objects that store particular 
-# info about what parents are and how far away they are etc. 
+# To do:
+# 1) Make a method that can parse this information into a nwk file so that
+# it could be read by other tree viewers.
+# 2) Investigate about adding in Branchpoint objects that store particular
+# info about what parents are and how far away they are etc.
 #################################################################################
 
-import json
 import numpy as np
-import os
 import numpy.typing as npt
-
-#print(os.getcwd())
 
 
 class BranchPoint(object):
     """Represents a branchpoint on a phylogenetic tree. Can contain
-    information about the parents or children of that point and how 
-    long that branch point is. 
+    information about the parents or children of that point and how
+    long that branch point is.
 
-    Future use -> can associate annotations with this branch point 
+    Future use -> can associate annotations with this branch point
     """
 
     def __init__(self, id: str, parent: int, dist: float,
-    children: npt.ArrayLike, isleaf: bool) -> None:
+                 children: npt.ArrayLike) -> None:
         """ Constructs instance of a branchpoint.
 
-        Parameters: 
-            id(str): Sequence ID 
+        Parameters:
+            id(str): Sequence ID
             parent(int): Index of parent branchpoint
             dist(float): Distance to parent
-            children(np.array): all children of branchpoint 
-            isLeaf(bool): Marker for extant sequence             
+            children(np.array): all children of branchpoint
+            isLeaf(bool): Marker for extant sequence
         """
-        
-        self._id = id 
+
+        self._id = id
         self._parent = parent
         self._dist = dist
         self._children = children
-        self._isLeaf = isleaf 
 
     def __str__(self) -> str:
-     
+
         return (f"Name: {self._id}\n\
         Parent Index: {self._parent}\n\
         Distance To Parent {self._dist}\n\
-        Children IDs: {self._children}\n\
-        Leaf: {self._isLeaf}")
+        Children IDs: {self._children}")
 
     def getId(self) -> str: return self._id
 
     def getParent(self) -> int: return self._parent
 
-    def getDist(self) -> float: return self._dist 
+    def getDist(self) -> float: return self._dist
 
     def getChildren(self): return self._children
 
-    def isLeaf(self) -> bool: return self._isLeaf 
 
 class IdxTree(object):
 
-    def __init__(self, n=0, useddistances=False):
+    def __init__(self, nBranches: int, branchpoints: npt.ArrayLike,
+                 parents: npt.ArrayLike, children: dict, indices: dict,
+                 distances: npt.ArrayLike) -> None:
         """
-        Parameters: 
-            n (int): number of branch points 
-            useddistances (bool): True if distances have been used?
+        Parameters:
+            nBranchs(int): number of branch points in the tree 
+
+            branchpoints(Array): Contains BranchPoint objects  
+
+            parents(Array): maps the index of the child to the index 
+            of the parent 
+
+            children(Array): maps the index of the parent to an array 
+            containing the indexes the child/children 
+
+            indices(dict): Maps the sequence ID to the index on the tree 
+
+            distances(Array): Maps the branchpoint to the distance to its parent 
         """
-        
-        self._nBranches = n 
-        self._branchpoints = np.array([None for i in range(n)])
-        self._parents = np.array([None for i in range(n)])
-        self._children = dict()
-        self._indices = dict()
-        
-        if useddistances:
-            self._distances = np.array([None for i in range(n)])
-        else:
-            self._distances = None
+
+        self._nBranches = nBranches
+        self._branchpoints = branchpoints
+        self._parents = parents
+        self._children = children
+        self._indices = indices
+        self._distances = distances
 
     def __str__(self) -> str:
         return f"Number of branchpoints: {self.getNBranches()}\nParents: {self.getParents()}\nChildren: {self.getChildren()}\nIndices: {self.getIndices()}\nDistances: {self.getDistances()}"
 
     def getNBranches(self) -> int: return self._nBranches
 
-    def getBranchpoints(self) -> np.array: return self._branchpoints
+    def getBranchpoints(self) -> npt.ArrayLike: return self._branchpoints
 
-    def getParents(self) -> np.array: return self._parents
+    def getParents(self) -> npt.ArrayLike: return self._parents
 
     def getChildren(self) -> dict: return self._children
 
     def getIndices(self) -> dict: return self._indices
 
-    def getDistances(self) -> np.array: return self._distances
-
-    def getParent(self, CIdx: int) -> int:
-        """
-        Parameters:
-            CIdx (int): Index of the child 
-
-        Returns:
-            int: Index of that child's parent 
-        """       
-
-        return self._parents[CIdx]
+    def getDistances(self) -> npt.ArrayLike: return self._distances
 
     def getIndex(self, name: str) -> int:
         """
         Parameters:
-            name (str): sequence name 
+            name (str): sequence name
 
         Returns:
             int: index of branchpoint for that sequence
-        
+
         """
 
         return self._indices[name]
 
-    def setParent(self, BIdx: int, PIdx: int):
-        """
-        Parameters: 
-            BIdx (int): Branchpoint Index
 
-            PIdx (int): Index of parent Branchpoint
-        """
+def IdxTreeFromJSON(serial: dict) -> IdxTree:
+    """Instantiates a IdxTree object from a Json file
 
-        self._parents[BIdx] = PIdx
+    Parameters:
+        json_file (os.PathLike): path to json file 
+    """
 
-    def setBranchPoint(self, BIdx: int, bp: BranchPoint):
-        """
-        Parameters: 
-            BIdx (int): Branchpoint Index
+    try:
+        jdists = serial["Input"]["Tree"]["Distances"]
+    except KeyError:
+        jdists = None
 
-            bp (Branchpoint): container to store information
-        """
+    nBranches = serial["Input"]["Tree"]["Branchpoints"]
 
-        self._branchpoints[BIdx] = bp
-    
-    def setDistance(self, BIdx: int, dist: float):
-        """
-        Parameters: 
-            BIdx (int): Branchpoint Index
+    jlabels = serial["Input"]["Tree"]["Labels"]
+    jparents = serial["Input"]["Tree"]["Parents"]
 
-            dist (int): branch length of branchpoint
-        """
+    parents = np.array([None for i in range(nBranches)])
+    bpoints = np.array([None for i in range(nBranches)])
+    children = dict()
+    distances = np.array([None for i in range(nBranches)])
+    indices = dict()
 
-        self._distances[BIdx] = dist
+    # iterate at each branch point
+    for i in range(nBranches):
 
-    def setIndex(self, BIdx: int, Pname: str):
-        """
-        Parameters: 
-            BIdx (int): Branchpoint Index
+        try:
 
-            Pname (str): Name of ancestor or extant
-        """
-        
-        self._indices[Pname] = BIdx
+            # index by parent name and assign what their parent
+            # branch point index is
+            parents[i] = jparents[i]
 
-    def setChildren(self, PIdx: int, Children: npt.ArrayLike):
-        """
-        Parameters: 
-            PIdx (int): Parent index
+            if jdists is not None:
 
-            Children (np.array): Array containing index of children
-        """
+                # using same index as parent, order distances
+                distances[i] = jdists[i]
+            else:
+                distances[i] = None
+            # index by parent name and assign branch point
+            indices[jlabels[i]] = i
 
-        self._children[PIdx] = Children
+        except:
+            raise RuntimeError("Invalid JSON format")
 
-    def distToParent(self, CIdx: int) -> float:
-        """
-        Parameters:
-            CIdx (int): Index of the child 
+    # Next step is to record children of each parent
+    for PIdx in range(nBranches):
 
-        Returns:
-            float: Distance to parent  
-        """  
+        curr_children = []
 
-        return self._distances[CIdx]
+        for CIdx in range(nBranches):
 
-    def isLeaf(self, BIDx) -> bool:
-        """
-        Parameters: 
-            BIdx (int): Branchpoint Index
-        """
+            if (parents[CIdx] == PIdx):
+                curr_children.append(CIdx)
 
-        if self._children[BIDx] is None:
-            return True
+        if len(curr_children) == 0:
+            ch_array = np.array([None])
         else:
-            return False
+            ch_array = np.array(curr_children)
 
-    def constructNwk(self) -> str:
-        
-        pass
-        """
-        nwk = "("
-        i = 0
-        if self.getChildren()[i] is None:
-            return nwk + ");"
-        else:
-            i += 1
-            self.constructNwk()
-        """
+        children[PIdx] = ch_array
+
+    for BIdx in range(nBranches):
+
+        bp = BranchPoint(id=jlabels[BIdx], parent=parents[BIdx],
+                         dist=distances[BIdx], children=children[BIdx])
+
+        bpoints[BIdx] = bp
+
+    return IdxTree(nBranches=nBranches, branchpoints=bpoints, parents=parents,
+                   children=children, indices=indices, distances=distances)
