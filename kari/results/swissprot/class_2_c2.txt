@@ -1,0 +1,132 @@
+#                                                                                             --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name            accession   tlen query name                        accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#    ------------------- ---------- -----              -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+B2VG69_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   2.2e-25   82.3   0.6   1   1   2.7e-25   2.7e-25   81.9   0.6     7   144     7   139     4   141 0.96 -
+B4F1U6_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   4.9e-25   81.1   0.1   1   1   5.8e-25   5.8e-25   80.9   0.1    16   144    15   138     5   140 0.88 -
+A8GL54_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.5e-24   79.6   0.2   1   1   1.7e-24   1.7e-24   79.3   0.2    16   144    15   138     4   140 0.88 -
+B5XYZ8_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.7e-24   79.3   0.5   1   1   2.2e-24   2.2e-24   79.0   0.5    16   144    15   138     5   140 0.88 -
+A8ACS4_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.8e-24   79.3   0.3   1   1   2.2e-24   2.2e-24   79.0   0.3    16   144    15   138     5   140 0.88 -
+A5FFY3_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   6.1e-24   77.6   0.2   1   1     7e-24     7e-24   77.4   0.2    16   144    16   139     5   141 0.89 -
+A7MQH1_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   6.8e-24   77.4   0.4   1   1   8.2e-24   8.2e-24   77.2   0.4    17   144    17   138     5   140 0.89 -
+A6TGG1_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.6e-23   76.2   0.6   1   1     2e-23     2e-23   75.9   0.6    16   144    15   138     5   140 0.88 -
+A4WG34_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.9e-23   76.0   0.4   1   1   2.3e-23   2.3e-23   75.7   0.4    17   144    17   138     5   140 0.89 -
+B5YY23_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.1e-23   75.8   0.1   1   1   2.7e-23   2.7e-23   75.4   0.1    16   144    15   138     5   140 0.88 -
+P58256_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.1e-23   75.8   0.1   1   1   2.7e-23   2.7e-23   75.4   0.1    16   144    15   138     5   140 0.88 -
+A9MJN4_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.3e-23   75.7   0.1   1   1   2.9e-23   2.9e-23   75.4   0.1    16   144    15   138     5   140 0.88 -
+A4TRD9_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   2.3e-23   75.7   0.1   1   1   2.9e-23   2.9e-23   75.4   0.1    17   144    17   139     5   141 0.86 -
+A7FD32_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   2.3e-23   75.7   0.1   1   1   2.9e-23   2.9e-23   75.4   0.1    17   144    17   139     5   141 0.86 -
+A9R8G1_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   2.3e-23   75.7   0.1   1   1   2.9e-23   2.9e-23   75.4   0.1    17   144    17   139     5   141 0.86 -
+B1JQ26_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   2.3e-23   75.7   0.1   1   1   2.9e-23   2.9e-23   75.4   0.1    17   144    17   139     5   141 0.86 -
+B2JZH8_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   2.3e-23   75.7   0.1   1   1   2.9e-23   2.9e-23   75.4   0.1    17   144    17   139     5   141 0.86 -
+Q1CBS1_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   2.3e-23   75.7   0.1   1   1   2.9e-23   2.9e-23   75.4   0.1    17   144    17   139     5   141 0.86 -
+Q1CNM0_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   2.3e-23   75.7   0.1   1   1   2.9e-23   2.9e-23   75.4   0.1    17   144    17   139     5   141 0.86 -
+Q66G37_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   2.3e-23   75.7   0.1   1   1   2.9e-23   2.9e-23   75.4   0.1    17   144    17   139     5   141 0.86 -
+Q8ZAC2_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   2.3e-23   75.7   0.1   1   1   2.9e-23   2.9e-23   75.4   0.1    17   144    17   139     5   141 0.86 -
+Q7UB34_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.4e-23   75.7   0.1   1   1     3e-23     3e-23   75.3   0.1    16   144    15   138     5   140 0.88 -
+Q329V3_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.4e-23   75.6   0.1   1   1   3.1e-23   3.1e-23   75.3   0.1    16   144    15   138     5   140 0.88 -
+A1AHU6_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.8e-23   75.4   0.1   1   1   3.5e-23   3.5e-23   75.1   0.1    16   144    15   138     5   140 0.88 -
+A7ZTX6_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.8e-23   75.4   0.1   1   1   3.5e-23   3.5e-23   75.1   0.1    16   144    15   138     5   140 0.88 -
+B1LLU9_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.8e-23   75.4   0.1   1   1   3.5e-23   3.5e-23   75.1   0.1    16   144    15   138     5   140 0.88 -
+B6I4B1_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.8e-23   75.4   0.1   1   1   3.5e-23   3.5e-23   75.1   0.1    16   144    15   138     5   140 0.88 -
+B7L8B5_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.8e-23   75.4   0.1   1   1   3.5e-23   3.5e-23   75.1   0.1    16   144    15   138     5   140 0.88 -
+B7LU79_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.8e-23   75.4   0.1   1   1   3.5e-23   3.5e-23   75.1   0.1    16   144    15   138     5   140 0.88 -
+B7MGI6_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.8e-23   75.4   0.1   1   1   3.5e-23   3.5e-23   75.1   0.1    16   144    15   138     5   140 0.88 -
+B7N269_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.8e-23   75.4   0.1   1   1   3.5e-23   3.5e-23   75.1   0.1    16   144    15   138     5   140 0.88 -
+B7NF81_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.8e-23   75.4   0.1   1   1   3.5e-23   3.5e-23   75.1   0.1    16   144    15   138     5   140 0.88 -
+B7NTG7_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.8e-23   75.4   0.1   1   1   3.5e-23   3.5e-23   75.1   0.1    16   144    15   138     5   140 0.88 -
+B7UMN1_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.8e-23   75.4   0.1   1   1   3.5e-23   3.5e-23   75.1   0.1    16   144    15   138     5   140 0.88 -
+Q0TAU6_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.8e-23   75.4   0.1   1   1   3.5e-23   3.5e-23   75.1   0.1    16   144    15   138     5   140 0.88 -
+Q1R4G3_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.8e-23   75.4   0.1   1   1   3.5e-23   3.5e-23   75.1   0.1    16   144    15   138     5   140 0.88 -
+Q8FBR2_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.8e-23   75.4   0.1   1   1   3.5e-23   3.5e-23   75.1   0.1    16   144    15   138     5   140 0.88 -
+A1JI57_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   3.8e-23   75.0   0.1   1   1   4.8e-23   4.8e-23   74.7   0.1    17   144    17   139     5   141 0.86 -
+Q9RQ51_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   4.4e-23   74.8   0.2   1   1   5.8e-23   5.8e-23   74.4   0.2    16   144    16   138     2   140 0.86 -
+A8A6N0_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   6.3e-23   74.3   0.1   1   1   8.1e-23   8.1e-23   73.9   0.1    16   144    15   138     5   140 0.88 -
+B1IWC4_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   6.3e-23   74.3   0.1   1   1   8.1e-23   8.1e-23   73.9   0.1    16   144    15   138     5   140 0.88 -
+B1X9Z0_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   6.3e-23   74.3   0.1   1   1   8.1e-23   8.1e-23   73.9   0.1    16   144    15   138     5   140 0.88 -
+C4ZZ44_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   6.3e-23   74.3   0.1   1   1   8.1e-23   8.1e-23   73.9   0.1    16   144    15   138     5   140 0.88 -
+P05793_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   6.3e-23   74.3   0.1   1   1   8.1e-23   8.1e-23   73.9   0.1    16   144    15   138     5   140 0.88 -
+B2TU17_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   8.5e-23   73.9   0.1   1   1   1.1e-22   1.1e-22   73.5   0.1    16   144    15   138     5   140 0.88 -
+B7M5C2_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   8.5e-23   73.9   0.1   1   1   1.1e-22   1.1e-22   73.5   0.1    16   144    15   138     5   140 0.88 -
+Q31UL0_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   8.5e-23   73.9   0.1   1   1   1.1e-22   1.1e-22   73.5   0.1    16   144    15   138     5   140 0.88 -
+Q3YVJ0_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   8.5e-23   73.9   0.1   1   1   1.1e-22   1.1e-22   73.5   0.1    16   144    15   138     5   140 0.88 -
+Q9RQ47_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   8.6e-23   73.8   0.1   1   1   9.4e-23   9.4e-23   73.7   0.1    20   144    20   138     2   140 0.89 -
+B4SZ22_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   9.5e-23   73.7   0.0   1   1   1.2e-22   1.2e-22   73.3   0.0    16   144    15   138     4   140 0.88 -
+C6DHG3_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   1.1e-22   73.5   0.1   1   1   1.4e-22   1.4e-22   73.2   0.1    15   144    15   139     5   141 0.86 -
+A9MXE7_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.1e-22   73.4   0.0   1   1   1.5e-22   1.5e-22   73.1   0.0    16   144    15   138     4   140 0.88 -
+B4TB09_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.1e-22   73.4   0.0   1   1   1.5e-22   1.5e-22   73.1   0.0    16   144    15   138     4   140 0.88 -
+B4TNS6_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.1e-22   73.4   0.0   1   1   1.5e-22   1.5e-22   73.1   0.0    16   144    15   138     4   140 0.88 -
+B5BIS2_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.1e-22   73.4   0.0   1   1   1.5e-22   1.5e-22   73.1   0.0    16   144    15   138     4   140 0.88 -
+B5FN70_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.1e-22   73.4   0.0   1   1   1.5e-22   1.5e-22   73.1   0.0    16   144    15   138     4   140 0.88 -
+B5QVG7_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.1e-22   73.4   0.0   1   1   1.5e-22   1.5e-22   73.1   0.0    16   144    15   138     4   140 0.88 -
+B5RFS8_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.1e-22   73.4   0.0   1   1   1.5e-22   1.5e-22   73.1   0.0    16   144    15   138     4   140 0.88 -
+C0Q2V3_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.1e-22   73.4   0.0   1   1   1.5e-22   1.5e-22   73.1   0.0    16   144    15   138     4   140 0.88 -
+Q57HU2_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.1e-22   73.4   0.0   1   1   1.5e-22   1.5e-22   73.1   0.0    16   144    15   138     4   140 0.88 -
+Q5PJZ5_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.1e-22   73.4   0.0   1   1   1.5e-22   1.5e-22   73.1   0.0    16   144    15   138     4   140 0.88 -
+Q8Z381_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.1e-22   73.4   0.0   1   1   1.5e-22   1.5e-22   73.1   0.0    16   144    15   138     4   140 0.88 -
+P05989_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.1e-22   73.4   0.0   1   1   1.5e-22   1.5e-22   73.0   0.0    16   144    15   138     5   140 0.88 -
+B5EZ33_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.5e-22   73.0   0.0   1   1     2e-22     2e-22   72.6   0.0    16   144    15   138     4   140 0.89 -
+Q491Z2_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   1.8e-22   72.8   0.0   1   1   2.3e-22   2.3e-22   72.4   0.0    21   144    21   139     1   141 0.85 -
+B4S1X4_class_2_c2_domain -            143 kari_class_1_swissprot_c1_domains -            146   1.9e-22   72.7   0.1   1   1   2.2e-22   2.2e-22   72.5   0.1    12   144    12   141     1   143 0.81 -
+Q9RQ55_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   2.9e-22   72.1   0.4   1   1   3.5e-22   3.5e-22   71.9   0.4    22   144    22   138     7   140 0.89 -
+Q7VRM0_class_2_c2_domain -            143 kari_class_1_swissprot_c1_domains -            146   3.2e-22   72.0   0.0   1   1   4.2e-22   4.2e-22   71.6   0.0    16   144    15   141     3   143 0.87 -
+Q6CZD1_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   3.3e-22   71.9   0.1   1   1   4.4e-22   4.4e-22   71.5   0.1    15   144    15   139     5   141 0.86 -
+C4L8N9_class_2_c2_domain -            143 kari_class_1_swissprot_c1_domains -            146   4.4e-22   71.5   0.2   1   1   5.5e-22   5.5e-22   71.2   0.2    17   144    17   141     5   143 0.88 -
+Q15MY4_class_2_c2_domain -            143 kari_class_1_swissprot_c1_domains -            146   5.5e-22   71.2   0.0   1   1   6.7e-22   6.7e-22   70.9   0.0    18   144    18   141     6   143 0.89 -
+A4STE2_class_2_c2_domain -            142 kari_class_1_swissprot_c1_domains -            146     7e-22   70.9   0.2   1   1   8.8e-22   8.8e-22   70.6   0.2     7   144     7   140     4   142 0.91 -
+A0KEM1_class_2_c2_domain -            142 kari_class_1_swissprot_c1_domains -            146   9.2e-22   70.5   0.2   1   1   1.1e-21   1.1e-21   70.2   0.2     7   144     7   140     4   142 0.91 -
+A0M380_class_2_c2_domain -            133 kari_class_1_swissprot_c1_domains -            146     1e-21   70.4   0.0   1   1   1.2e-21   1.2e-21   70.1   0.0    22   144    13   131     2   133 0.82 -
+Q7MYK9_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   1.6e-21   69.7   0.0   1   1   1.9e-21   1.9e-21   69.4   0.0    16   144    15   139     5   141 0.85 -
+Q89A20_class_2_c2_domain -            131 kari_class_1_swissprot_c1_domains -            146     2e-21   69.4   0.1   1   1   2.6e-21   2.6e-21   69.0   0.1    23   144    14   129     2   131 0.89 -
+C5BBA8_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   2.2e-21   69.3   0.0   1   1   3.1e-21   3.1e-21   68.8   0.0    15   144    15   139     5   141 0.86 -
+Q11VZ3_class_2_c2_domain -            134 kari_class_1_swissprot_c1_domains -            146   2.3e-21   69.2   0.1   1   1   2.8e-21   2.8e-21   68.9   0.1    24   145    15   133     5   134 0.83 -
+Q3IE45_class_2_c2_domain -            132 kari_class_1_swissprot_c1_domains -            146   4.6e-21   68.2   0.1   1   1   5.8e-21   5.8e-21   67.9   0.1    21   144    11   130     2   132 0.84 -
+Q2NQA9_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146     1e-20   67.1   0.1   1   1   1.3e-20   1.3e-20   66.8   0.1    21   144    21   139     5   141 0.86 -
+B8D8B4_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.2e-20   66.9   0.4   1   1   2.1e-20   2.1e-20   66.1   0.4    23   145    23   139    11   140 0.88 -
+B8D8F7_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.2e-20   66.9   0.4   1   1   2.1e-20   2.1e-20   66.1   0.4    23   145    23   139    11   140 0.88 -
+P57655_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.2e-20   66.9   0.4   1   1   2.1e-20   2.1e-20   66.1   0.4    23   145    23   139    11   140 0.88 -
+O51888_class_2_c2_domain -            140 kari_class_1_swissprot_c1_domains -            146   1.3e-20   66.8   1.3   1   1     5e-20     5e-20   64.9   1.3    22   145    22   139     5   140 0.85 -
+A6W216_class_2_c2_domain -            142 kari_class_1_swissprot_c1_domains -            146   1.4e-20   66.7   0.1   1   1   1.7e-20   1.7e-20   66.4   0.1    15   144    15   140     4   142 0.84 -
+B0UWE8_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   1.6e-20   66.5   0.1   1   1   2.7e-20   2.7e-20   65.7   0.1    16   144    15   139     5   141 0.83 -
+Q0I511_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   1.6e-20   66.5   0.1   1   1   2.7e-20   2.7e-20   65.7   0.1    16   144    15   139     5   141 0.83 -
+Q9CLF1_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   1.8e-20   66.3   0.0   1   1   2.6e-20   2.6e-20   65.8   0.0    16   144    15   139     5   141 0.83 -
+B5FCV4_class_2_c2_domain -            143 kari_class_1_swissprot_c1_domains -            146   5.9e-20   64.6   0.1   1   1   9.1e-20   9.1e-20   64.0   0.1    10   144    10   141     4   143 0.82 -
+Q65WK8_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146     9e-20   64.0   0.1   1   1   1.4e-19   1.4e-19   63.5   0.1     8   144     8   139     5   141 0.86 -
+Q5E1S3_class_2_c2_domain -            143 kari_class_1_swissprot_c1_domains -            146   1.3e-19   63.5   0.1   1   1   2.1e-19   2.1e-19   62.9   0.1    10   144    10   141     4   143 0.82 -
+A5UHH1_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   1.8e-19   63.1   0.0   1   1   2.4e-19   2.4e-19   62.7   0.0    16   144    16   139     5   141 0.85 -
+B7VGL9_class_2_c2_domain -            143 kari_class_1_swissprot_c1_domains -            146   2.1e-19   62.8   0.2   1   1   3.9e-19   3.9e-19   62.0   0.2    18   144    18   141     4   143 0.82 -
+Q7MQH3_class_2_c2_domain -            143 kari_class_1_swissprot_c1_domains -            146   2.6e-19   62.5   0.1   1   1   4.2e-19   4.2e-19   61.9   0.1    18   144    18   141     4   143 0.80 -
+Q87TN4_class_2_c2_domain -            143 kari_class_1_swissprot_c1_domains -            146   2.6e-19   62.5   0.1   1   1   4.2e-19   4.2e-19   61.9   0.1    18   144    18   141     4   143 0.80 -
+Q8DDC8_class_2_c2_domain -            143 kari_class_1_swissprot_c1_domains -            146   2.6e-19   62.5   0.1   1   1   4.2e-19   4.2e-19   61.9   0.1    18   144    18   141     4   143 0.80 -
+A3N3E9_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   2.8e-19   62.4   0.1   1   1   5.2e-19   5.2e-19   61.6   0.1     8   144     8   139     5   141 0.85 -
+B0BTD3_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   2.8e-19   62.4   0.1   1   1   5.2e-19   5.2e-19   61.6   0.1     8   144     8   139     5   141 0.85 -
+A5UE34_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   2.9e-19   62.4   0.0   1   1   3.9e-19   3.9e-19   62.0   0.0    16   144    16   139     5   141 0.85 -
+P44822_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   2.9e-19   62.4   0.0   1   1   3.9e-19   3.9e-19   62.0   0.0    16   144    16   139     5   141 0.85 -
+B8F6G2_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   3.1e-19   62.3   0.1   1   1   5.8e-19   5.8e-19   61.4   0.1     8   144     8   139     5   141 0.85 -
+Q4QMN4_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   4.5e-19   61.8   0.0   1   1   6.1e-19   6.1e-19   61.3   0.0    16   144    16   139     5   141 0.85 -
+A6VLU1_class_2_c2_domain -            141 kari_class_1_swissprot_c1_domains -            146   7.8e-19   61.0   0.0   1   1   1.1e-18   1.1e-18   60.5   0.0    15   144    15   139     5   141 0.84 -
+B6EP33_class_2_c2_domain -            143 kari_class_1_swissprot_c1_domains -            146   9.2e-19   60.8   0.2   1   1   1.8e-18   1.8e-18   59.8   0.2    20   144    20   141     6   143 0.83 -
+A1SAS8_class_2_c2_domain -            142 kari_class_1_swissprot_c1_domains -            146   1.2e-18   60.4   0.2   1   1   1.8e-18   1.8e-18   59.9   0.2    17   144    17   140     5   142 0.89 -
+A5F449_class_2_c2_domain -            143 kari_class_1_swissprot_c1_domains -            146   1.7e-18   59.9   0.1   1   1   2.6e-18   2.6e-18   59.3   0.1    19   144    19   141     5   143 0.86 -
+C3LQ01_class_2_c2_domain -            143 kari_class_1_swissprot_c1_domains -            146   1.7e-18   59.9   0.1   1   1   2.6e-18   2.6e-18   59.3   0.1    19   144    19   141     5   143 0.86 -
+Q9KVI4_class_2_c2_domain -            143 kari_class_1_swissprot_c1_domains -            146   1.7e-18   59.9   0.1   1   1   2.6e-18   2.6e-18   59.3   0.1    19   144    19   141     5   143 0.86 -
+Q6LVZ5_class_2_c2_domain -            143 kari_class_1_swissprot_c1_domains -            146   2.4e-18   59.4   0.2   1   1   3.5e-18   3.5e-18   58.9   0.2    20   144    20   141     5   143 0.80 -
+Q47UP4_class_2_c2_domain -            133 kari_class_1_swissprot_c1_domains -            146   7.7e-18   57.8   0.1   1   1   1.2e-17   1.2e-17   57.2   0.1    24   144    15   131     6   133 0.86 -
+Q8E9D5_class_2_c2_domain -            133 kari_class_1_swissprot_c1_domains -            146   9.9e-18   57.4   0.2   1   1   3.6e-17   3.6e-17   55.6   0.2    18   144     9   131     2   133 0.80 -
+Q9AQA0_class_2_c2_domain -             60 kari_class_1_swissprot_c1_domains -            146   5.5e-10   32.3   0.1   1   1   5.7e-10   5.7e-10   32.2   0.1    22    68    13    59     3    60 0.88 -
+Q9AQ96_class_2_c2_domain -             57 kari_class_1_swissprot_c1_domains -            146   6.4e-10   32.1   0.2   1   1   6.8e-10   6.8e-10   32.0   0.2    22    65    13    56     3    57 0.86 -
+Q9AQ99_class_2_c2_domain -             59 kari_class_1_swissprot_c1_domains -            146   1.7e-09   30.7   0.1   1   1   1.8e-09   1.8e-09   30.6   0.1    22    67    13    58     3    59 0.88 -
+Q9AQ97_class_2_c2_domain -             60 kari_class_1_swissprot_c1_domains -            146   1.9e-09   30.6   0.1   1   1     2e-09     2e-09   30.5   0.1    22    68    13    59     3    60 0.87 -
+Q65XK0_class_2_c2_domain -            137 kari_class_1_swissprot_c1_domains -            146     7e-09   28.7   0.0   1   1   7.6e-09   7.6e-09   28.6   0.0    19    89    11    82     6   123 0.87 -
+O82043_class_2_c2_domain -            137 kari_class_1_swissprot_c1_domains -            146   1.7e-08   27.4   0.0   1   1   2.2e-08   2.2e-08   27.1   0.0    19    84    11    77     8    97 0.88 -
+Q05758_class_2_c2_domain -            137 kari_class_1_swissprot_c1_domains -            146     2e-08   27.3   0.0   1   1   2.5e-08   2.5e-08   26.9   0.0    19    84    11    77     8    97 0.88 -
+Q01292_class_2_c2_domain -            137 kari_class_1_swissprot_c1_domains -            146   2.2e-08   27.1   0.0   1   1   2.8e-08   2.8e-08   26.7   0.0    19    84    11    77     8    92 0.89 -
+#
+# Program:         hmmsearch
+# Version:         3.3 (Nov 2019)
+# Pipeline mode:   SEARCH
+# Query file:      /home/seb-porras/BodenProjects/kari/datasets/kari_ec_1_1_1_86_ec_1_1_1_382_ec_1_1_1_383_swissprot/subsets/classI_kari/class_1.hmm
+# Target file:     ./kari_class_2_swissprot_c2_domains.fasta
+# Option settings: hmmsearch --domtblout class_2_c2.txt /home/seb-porras/BodenProjects/kari/datasets/kari_ec_1_1_1_86_ec_1_1_1_382_ec_1_1_1_383_swissprot/subsets/classI_kari/class_1.hmm ./kari_class_2_swissprot_c2_domains.fasta 
+# Current dir:     /home/seb-porras/BodenProjects/kari/datasets/kari_ec_1_1_1_86_ec_1_1_1_382_ec_1_1_1_383_swissprot/subsets/classII_kari
+# Date:            Tue Oct 18 22:46:51 2022
+# [ok]
